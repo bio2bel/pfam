@@ -38,7 +38,7 @@ Command Line Utility
 
 
 .. |build| image:: https://travis-ci.com/bio2bel/pfam.svg?branch=master
-    :target: https://travis-ci.org/bio2bel/pfam
+    :target: https://travis-ci.com/bio2bel/pfam
     :alt: Build Status
 
 .. |documentation| image:: http://readthedocs.org/projects/bio2bel-pfam/badge/?version=latest
