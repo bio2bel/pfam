@@ -1,5 +1,5 @@
-Bio2BEL PFAM
-==========================================
+Bio2BEL PFAM |build|
+====================
 
 Installation |pypi_version| |python_versions| |pypi_license|
 ------------------------------------------------------------
