@@ -16,7 +16,7 @@ __all__ = [
 ]
 
 VERSION = '0.0.2-dev'
-MODULE_NAME = 'bio2bel_pfam'
+MODULE_NAME = 'pfam'
 DATA_DIR = get_data_dir(MODULE_NAME)
 
 CLAN_MAPPING_URL = 'ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.clans.tsv.gz'
