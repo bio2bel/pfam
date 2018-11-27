@@ -3,7 +3,6 @@
 """Parsers for Bio2BEL PFAM."""
 
 from bio2bel.downloading import make_df_getter
-
 from .constants import CLAN_MAPPING_HEADER, CLAN_MAPPING_PATH, CLAN_MAPPING_URL
 
 __all__ = [

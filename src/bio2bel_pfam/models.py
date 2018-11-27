@@ -4,10 +4,10 @@
 
 import logging
 
-import pybel.dsl
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import DeclarativeMeta, declarative_base
 
+import pybel.dsl
 from .constants import MODULE_NAME
 
 __all__ = [

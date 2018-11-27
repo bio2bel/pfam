@@ -8,7 +8,6 @@ from bio2bel import AbstractManager
 from bio2bel.manager.flask_manager import FlaskMixin
 from bio2bel.manager.namespace_manager import BELNamespaceManagerMixin
 from pybel.manager.models import Namespace, NamespaceEntry
-
 from .constants import MODULE_NAME
 from .models import Base, Clan, Family
 from .parsers import get_clan_mapping_df
@@ -23,7 +22,7 @@ class Manager(AbstractManager, BELNamespaceManagerMixin, FlaskMixin):
 
     namespace_model = Family
     identifiers_recommended = 'Pfam'
-    identifiers_pattern = '^PF\d{5}$'
+    identifiers_pattern = r'^PF\d{5}$'
     identifiers_miriam = 'MIR:00000028'
     identifiers_namespace = 'pfam'
     identifiers_url = 'http://identifiers.org/pfam/'
