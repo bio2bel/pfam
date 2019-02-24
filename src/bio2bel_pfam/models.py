@@ -34,10 +34,12 @@ class Family(Base):
     name = Column(String, nullable=True)
     summary = Column(String, nullable=True)
 
+    bel_encoding = 'GRP'
+
     def as_pybel(self) -> pybel.dsl.Protein:
         """Serialize as a PyBEL protein."""
-        return pybel.dsl.protein(
-            namespace='pfam',
+        return pybel.dsl.Protein(
+            namespace=MODULE_NAME,
             name=self.name,
             identifier=self.pfam_id,
         )
@@ -54,3 +56,11 @@ class Clan(Base):
 
     clan_id = Column(String, nullable=False, index=True, unique=True)
     name = Column(String, nullable=True)
+
+    def as_pybel(self) -> pybel.dsl.Protein:
+        """Serialize as a PyBEL protein."""
+        return pybel.dsl.Protein(
+            namespace='pfam.clan',
+            name=self.name,
+            identifier=self.clan_id,
+        )

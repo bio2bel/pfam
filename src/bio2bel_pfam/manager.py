@@ -65,5 +65,5 @@ class Manager(AbstractManager, BELNamespaceManagerMixin, FlaskMixin):
             namespace=namespace,
             name=family.name,
             identifier=family.pfam_id,
-            encoding='P',
+            encoding='GRP',
         )
