@@ -48,10 +48,8 @@ class Manager(AbstractManager, BELNamespaceManagerMixin, FlaskMixin):
     def populate(self, clan_mapping_url: Optional[str] = None) -> None:
         """Populate the Bio2BEL PFAM database."""
         clan_mapping_df = get_clan_mapping_df(url=clan_mapping_url)
-        print(clan_mapping_df.head())
         # slice the dataframe. It's not so big so this is okay.
         pfam_df = clan_mapping_df[['family_id', 'family_name', 'family_summary']]
-        print(pfam_df.head())
         pfam_df.columns = ['pfam_id', 'name', 'summary']
         pfam_df.to_sql(Family.__tablename__, self.engine, if_exists='append', index=False)
         self.session.commit()
