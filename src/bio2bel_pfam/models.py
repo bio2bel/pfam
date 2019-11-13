@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""SQLAlchemy models for Bio2BEL PFAM."""
+"""SQLAlchemy models for Bio2BEL Pfam."""
 
 import logging
 
@@ -25,7 +25,7 @@ Base: DeclarativeMeta = declarative_base()
 
 
 class Family(Base):
-    """A PFAM Protein Family."""
+    """A Pfam Protein Family."""
 
     __tablename__ = FAMILY_TABLE_NAME
     id = Column(Integer, primary_key=True)
@@ -45,11 +45,11 @@ class Family(Base):
         )
 
     def __repr__(self):  # noqa: D105
-        return f'<Family pfam_id={self.pfam_id}, name={self.name}, summary={self.summary}>'
+        return f'Family(pfam_id={self.pfam_id}, name={self.name}, summary={self.summary})'
 
 
 class Clan(Base):
-    """A PFAM Protein Clan."""
+    """A Pfam Protein Clan."""
 
     __tablename__ = CLAN_TABLE_NAME
     id = Column(Integer, primary_key=True)
@@ -64,3 +64,6 @@ class Clan(Base):
             name=self.name,
             identifier=self.clan_id,
         )
+
+    def __repr__(self):  # noqa: D105
+        return f'Clan(clan_id={self.clan_id}, name={self.name})'

@@ -2,19 +2,19 @@
 
 """Manager for Bio2BEL PFAM."""
 
-from typing import Mapping, Optional
-
 from bio2bel import AbstractManager
 from bio2bel.manager.flask_manager import FlaskMixin
 from bio2bel.manager.namespace_manager import BELNamespaceManagerMixin
 from pybel.manager.models import Namespace, NamespaceEntry
+from typing import Mapping, Optional
+
 from .constants import MODULE_NAME
 from .models import Base, Clan, Family
 from .parsers import get_clan_mapping_df
 
 
 class Manager(AbstractManager, BELNamespaceManagerMixin, FlaskMixin):
-    """Manages the Bio2BEL PFAM database."""
+    """Protein-protein family and protein family-clan memberships."""
 
     module_name = MODULE_NAME
     _base = Base
@@ -33,6 +33,7 @@ class Manager(AbstractManager, BELNamespaceManagerMixin, FlaskMixin):
 
     def count_clans(self) -> int:
         """Count the number of clans in the database."""
+        return self._count_model(Clan)
 
     def is_populated(self) -> bool:
         """Check if the Bio2BEL PFAM database is populated."""
